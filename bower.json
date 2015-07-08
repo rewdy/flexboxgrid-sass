@@ -22,6 +22,5 @@
     "tests*"
   ],
   "dependencies": {
-    "google-code-prettify": "~1.0.4"
   }
 }
