@@ -1,4 +1,3 @@
-$gutter-compensation: ($gutter-width * 0.5) * -1;
 //
 // -- Start editing -- //
 //
@@ -21,6 +20,8 @@ $breakpoints:
 //
 // -- Stop editing -- //
 //
+
+$gutter-compensation: ($gutter-width * 0.5) * -1;
 
 .wrapper {
   box-sizing: border-box;
