@@ -37,6 +37,12 @@
     "gulp-useref": "^1.0.2",
     "main-bower-files": "^2.5.0",
     "opn": "^1.0.0",
-    "wiredep": "^2.0.0"
+    "wiredep": "^2.0.0",
+    "gulp-livereload": "^3.8.0",
+    "st": "^0.5.4",
+    "jade": "^1.11.0"
+  },
+  "dependencies": {
+    "gulp-jade": "^1.0.1"
   }
 }

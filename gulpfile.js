@@ -1,10 +1,29 @@
 /*global -$ */
 'use strict';
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
+var gulp = require('gulp'),
+    $ = require('gulp-load-plugins')(),
+    jade = require('jade'),
+    gulpJade = require('gulp-jade');
+
+jade.filters.code = function( block ) {
+    return block
+        .replace( /&/g, '&amp;' )
+        .replace( /</g, '&lt;' )
+        .replace( />/g, '&gt;' )
+        .replace( /"/g, '&quot;' );
+};
+
+gulp.task('jade', function () {
+  return gulp.src('./*.jade')
+    .pipe(gulpJade({
+      jade: jade,
+      pretty: true
+    }))
+    .pipe(gulp.dest('./demo/'));
+});
 
 gulp.task('styles', function () {
-  return gulp.src('source/sass/flexboxgrid.scss')
+  return gulp.src('source/sass/*')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'nested',
@@ -16,13 +35,14 @@ gulp.task('styles', function () {
       require('autoprefixer-core')({browsers: ['last 1 version']})
     ]))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('demo'));
 });
 
-gulp.task('clean', require('del').bind(null, ['dist']));
+gulp.task('clean', require('del').bind(null, ['demo']));
 
-gulp.task('watch', ['styles'], function () {
+gulp.task('watch', ['jade', 'styles'], function () {
   // watch for changes
+  gulp.watch('*.jade', ['jade']);
   gulp.watch('source/sass/*.scss', ['styles']);
   gulp.watch('bower.json', ['wiredep']);
 });
@@ -35,7 +55,7 @@ gulp.task('wiredep', function () {
     .pipe(wiredep({
       ignorePath: /^(\.\.\/)+/
     }))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('demo'));
 });
 
 gulp.task('default', function () {
