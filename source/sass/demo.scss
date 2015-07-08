@@ -12,7 +12,6 @@ body {
   font-family: "Galaxie", Georgia, Helvetica, Arial, serif;
   line-height: 2;
   color: #444;
-  min-width: 1200px;
   margin: 0;
   padding: 0;
 }
@@ -86,7 +85,8 @@ h5 {
     -webkit-font-smoothing: antialiased
 }
 .main-title {
-    font-size: 55px
+    font-size: 55px;
+    line-height: 1.2em;
 }
 p {
     margin-bottom: 15px
