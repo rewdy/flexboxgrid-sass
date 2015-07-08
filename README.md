@@ -3,7 +3,7 @@ Flexbox Grid Sass
 
 Grid based on the `flex` display property.
 
-http://tduarte.github.com/flexboxgrid-sass
+http://hugeinc.github.io/flexboxgrid-sass
 
 Install
 ---------
