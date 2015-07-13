@@ -1,5 +1,6 @@
 Flexbox Grid Sass
 ===========
+This work is an adaptation from the original Flexbox Grid created by @kristoferjoseph. This project aims to provide the benefits of the SASS pre-processor to the original grid, initially written in plain CSS.
 
 Grid based on the `flex` display property.
 
