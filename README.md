@@ -1,10 +1,12 @@
 Flexbox Grid Sass
 ===========
-This work is an adaptation from the original Flexbox Grid created by @kristoferjoseph. This project aims to provide the benefits of the SASS pre-processor to the original grid, initially written in plain CSS.
+This work is an adaptation from the original [Flexbox Grid](http://flexboxgrid.com/) created by @kristoferjoseph.
 
-Grid based on the `flex` display property.
+Grid based on the `flex` display property. [Check the documentation](http://hugeinc.github.io/flexboxgrid-sass)
 
-http://hugeinc.github.io/flexboxgrid-sass
+About
+------
+By trying the [Flexbox Grid](http://flexboxgrid.com/) we saw the internal need to a SASS version of it. Thanks to the good work of Kristopher Joseph, we forked his project and sassified it.
 
 Install
 ---------
