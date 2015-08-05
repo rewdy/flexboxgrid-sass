@@ -6,7 +6,7 @@
     "@dam"
   ],
   "description": "Grid based on the flex display property.",
-  "main": "source/sass/flexboxgrid.scss",
+  "main": "flexboxgrid.scss",
   "keywords": [
     "browser",
     "flexbox",

@@ -13,8 +13,8 @@ jade.filters.code = function( block ) {
         .replace( /"/g, '&quot;' );
 };
 
-gulp.task('jade', function () {
-  return gulp.src('./*.jade')
+gulp.task('jade:demo', function () {
+  return gulp.src('./demo/*.jade')
     .pipe(gulpJade({
       jade: jade,
       pretty: true
@@ -22,8 +22,8 @@ gulp.task('jade', function () {
     .pipe(gulp.dest('./demo/'));
 });
 
-gulp.task('styles', function () {
-  return gulp.src('source/sass/*')
+gulp.task('styles:demo', function () {
+  return gulp.src('demo/sass/*')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'nested',
@@ -38,12 +38,29 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('demo'));
 });
 
-gulp.task('clean', require('del').bind(null, ['demo']));
+gulp.task('styles:dist', function () {
+  return gulp.src('*.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      outputStyle: 'nested',
+      precision: 10,
+      includePaths: ['.', 'bower_components'],
+      onError: console.error.bind(console, 'Sass error:')
+    }))
+    .pipe($.postcss([
+      require('autoprefixer-core')({browsers: ['last 1 version']})
+    ]))
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('dist'));
+});
 
-gulp.task('watch', ['jade', 'styles'], function () {
+gulp.task('clean', require('del').bind(null, ['dist']));
+
+gulp.task('watch', ['jade:demo', 'styles:demo', 'styles:dist'], function () {
   // watch for changes
-  gulp.watch('*.jade', ['jade']);
-  gulp.watch('source/sass/*.scss', ['styles']);
+  gulp.watch('demo/*.jade', ['jade:demo']);
+  gulp.watch('*.scss', ['styles:dist']);
+  gulp.watch('demo/sass/*.scss', ['styles:demo']);
   gulp.watch('bower.json', ['wiredep']);
 });
 
@@ -51,11 +68,11 @@ gulp.task('watch', ['jade', 'styles'], function () {
 gulp.task('wiredep', function () {
   var wiredep = require('wiredep').stream;
 
-  gulp.src('source/sass/*.scss')
+  gulp.src('src/sass/*.scss')
     .pipe(wiredep({
       ignorePath: /^(\.\.\/)+/
     }))
-    .pipe(gulp.dest('demo'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', function () {
