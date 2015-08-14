@@ -31,9 +31,6 @@ gulp.task('styles:demo', function () {
       includePaths: ['.', 'bower_components'],
       onError: console.error.bind(console, 'Sass error:')
     }))
-    .pipe($.postcss([
-      require('autoprefixer-core')({browsers: ['last 1 version']})
-    ]))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('demo'));
 });
@@ -47,9 +44,6 @@ gulp.task('styles:dist', function () {
       includePaths: ['.', 'bower_components'],
       onError: console.error.bind(console, 'Sass error:')
     }))
-    .pipe($.postcss([
-      require('autoprefixer-core')({browsers: ['last 1 version']})
-    ]))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('dist'));
 });
@@ -60,6 +54,7 @@ gulp.task('watch', ['jade:demo', 'styles:demo', 'styles:dist'], function () {
   // watch for changes
   gulp.watch('demo/*.jade', ['jade:demo']);
   gulp.watch('*.scss', ['styles:dist']);
+  gulp.watch('bower_components/**/*.scss', ['styles:dist']);
   gulp.watch('demo/sass/*.scss', ['styles:demo']);
   gulp.watch('bower.json', ['wiredep']);
 });
