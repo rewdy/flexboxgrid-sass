@@ -9,21 +9,18 @@ $grid-columns: 12;
 // Set the gutter between columns.
 $gutter-width: 1rem;
 // Set a margin for the container sides.
-$outer-margin: 1rem;
+$outer-margin: 2rem;
 // Create or remove breakpoints for your project
 // Syntax:
 // name SIZErem,
 $breakpoints:
-  sm 48rem,
-  md 64rem,
-  lg 80rem,
-  xlg 90rem;
+  sm 48em 46rem,
+  md 62em 61rem
+  lg 75em 71rem;
 
 //
 // -- Stop editing -- //
 //
-
-$gutter-compensation: ($gutter-width * 0.5) * -1;
 
 .wrapper {
   box-sizing: border-box;
@@ -44,8 +41,8 @@ $gutter-compensation: ($gutter-width * 0.5) * -1;
   @include flex(0, 1, auto);
   @include flex-direction(row);
   @include flex-wrap(wrap);
-  margin-right: $gutter-compensation;
-  margin-left: $gutter-compensation;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
 }
 
 .row.reverse {
@@ -60,8 +57,8 @@ $name: xs;
 [class*="col-#{$name}"] {
   box-sizing: border-box;
   @include flex(0, 0, auto);
-  padding-right: $gutter-compensation * -1;
-  padding-left: $gutter-compensation  * -1;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 @for $i from 1 through $grid-columns {
   .col-#{$name}-#{$i} {
@@ -126,12 +123,17 @@ $name: xs;
 @each $breakpoint in $breakpoints {
   $name: nth($breakpoint, 1);
   $size: nth($breakpoint, 2);
+  $container: nth($breakpoint, 3);
   @media only screen and (min-width: $size) {
+    .container {
+      width: $container;
+    }
+
     [class*="col-#{$name}"] {
       box-sizing: border-box;
       @include flex(0, 0, auto);
-      padding-right: $gutter-compensation * -1;
-      padding-left: $gutter-compensation  * -1;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
     }
     @for $i from 1 through $grid-columns {
       .col-#{$name}-#{$i} {
