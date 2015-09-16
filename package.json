@@ -41,5 +41,8 @@
     "st": "^0.5.4",
     "jade": "^1.11.0",
     "gulp-jade": "^1.1.0"
+  },
+  "dependencies": {
+    "sass-flex-mixin": "^1.0.0"
   }
 }
