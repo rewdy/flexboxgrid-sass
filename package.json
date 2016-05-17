@@ -43,6 +43,6 @@
     "gulp-jade": "^1.1.0"
   },
   "dependencies": {
-    "sass-flex-mixin": "^1.0.0"
+    "sass-flex-mixin": "^1.0.3"
   }
 }
