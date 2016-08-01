@@ -59,7 +59,15 @@ $half-gutter-width: $gutter-width * .5;
 
 @mixin flexboxgrid-sass-col-common {
   box-sizing: border-box;
-  @include flex(0, 0, auto);
+
+  // split @include flex(0, 0, auto) into individual props
+  @include flex-grow(0);
+  @include flex-shrink(0);
+
+  // we leave @include flex-basis(auto) out of common because  
+  // in some spots we need it and some we dont
+  // more why here: https://github.com/kristoferjoseph/flexboxgrid/issues/126
+
   padding-right: $half-gutter-width;
   padding-left: $half-gutter-width;
 }
@@ -67,6 +75,7 @@ $half-gutter-width: $gutter-width * .5;
 $name: xs;
 .col-#{$name} {
   @include flexboxgrid-sass-col-common;
+  @include flex-basis(auto);
 }
 @for $i from 1 through $grid-columns {
   .col-#{$name}-#{$i} {
@@ -141,6 +150,7 @@ $name: xs;
 
     .col-#{$name} {
       @include flexboxgrid-sass-col-common;
+      @include flex-basis(auto);
     }
     @for $i from 1 through $grid-columns {
       .col-#{$name}-#{$i} {
