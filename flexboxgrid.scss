@@ -64,7 +64,7 @@ $half-gutter-width: $gutter-width * .5;
   @include flex-grow(0);
   @include flex-shrink(0);
 
-  // we leave @include flex-basis(auto) out of common because  
+  // we leave @include flex-basis(auto) out of common because
   // in some spots we need it and some we dont
   // more why here: https://github.com/kristoferjoseph/flexboxgrid/issues/126
 
@@ -84,10 +84,14 @@ $name: xs;
     max-width: 100% / $grid-columns * $i;
   }
 }
-@for $i from 1 through $grid-columns {
+@for $i from 0 through $grid-columns {
   .col-#{$name}-offset-#{$i} {
     @include flexboxgrid-sass-col-common;
-    margin-left: 100% / $grid-columns * $i;
+    @if $i == 0 {
+      margin-left: 0;
+    } @else {
+      margin-left: 100% / $grid-columns * $i;
+    }
   }
 }
 .col-#{$name} {
@@ -159,10 +163,14 @@ $name: xs;
         max-width: 100% / $grid-columns * $i;
       }
     }
-    @for $i from 1 through $grid-columns {
+    @for $i from 0 through $grid-columns {
       .col-#{$name}-offset-#{$i} {
         @include flexboxgrid-sass-col-common;
-        margin-left: 100% / $grid-columns * $i
+        @if $i == 0 {
+          margin-left: 0;
+        } @else {
+          margin-left: 100% / $grid-columns * $i;
+        }
       }
     }
     .col-#{$name} {
