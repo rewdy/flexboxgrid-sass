@@ -13,7 +13,7 @@ $outer-margin: 2rem !default;
 // Create or remove breakpoints for your project
 // Syntax:
 // name SIZErem,
-$breakpoints:
+$flexboxgrid-breakpoints:
   sm 48em 46rem,
   md 62em 61rem,
   lg 75em 71rem !default;
@@ -143,7 +143,7 @@ $name: xs;
 }
 
 
-@each $breakpoint in $breakpoints {
+@each $breakpoint in $flexboxgrid-breakpoints {
   $name: nth($breakpoint, 1);
   $size: nth($breakpoint, 2);
   $container: nth($breakpoint, 3);

@@ -35,7 +35,7 @@ To modify the Flexbox grid, declare the following variables on your layout .scss
 You can modify, remove or create breakpoints before generate the final CSS.
 
 ```
-$breakpoints:
+$flexboxgrid-breakpoints:
   sm 48rem,
   md 64rem,
   lg 80rem,
