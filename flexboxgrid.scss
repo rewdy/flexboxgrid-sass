@@ -101,7 +101,7 @@ $name: xs;
 }
 .start-#{$name} {
   @include justify-content(flex-start);
-  text-align: start;
+  text-align: left;
 }
 
 .center-#{$name} {
@@ -111,7 +111,7 @@ $name: xs;
 
 .end-#{$name} {
   @include justify-content(flex-end);
-  text-align: end;
+  text-align: right;
 }
 
 .top-#{$name} {
@@ -180,7 +180,7 @@ $name: xs;
     }
     .start-#{$name} {
       @include justify-content(flex-start);
-      text-align: start;
+      text-align: left;
     }
 
     .center-#{$name} {
@@ -190,7 +190,7 @@ $name: xs;
 
     .end-#{$name} {
       @include justify-content(flex-end);
-      text-align: end;
+      text-align: right;
     }
 
     .top-#{$name} {
