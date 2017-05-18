@@ -21,21 +21,21 @@ Use
 To modify the Flexbox grid, declare the following variables on your layout .scss
 
 #### Set the number of columns you want to use on your layout.
-`$grid-columns: 12;`
+`$flexboxgrid-grid-columns: 12;`
 
 #### Set the gutter between columns.
 
-`$gutter-width: 1rem;`
+`$flexboxgrid-gutter-width: 1rem;`
 
 #### Set a margin for the container sides.
 
-`$outer-margin: 1rem;`
+`$flexboxgrid-outer-margin: 1rem;`
 
 ####  Create or remove breakpoints for your project
 You can modify, remove or create breakpoints before generate the final CSS.
 
 ```
-$breakpoints:
+$flexboxgrid-breakpoints:
   sm 48rem,
   md 64rem,
   lg 80rem,
