@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import "../../flexboxgrid.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+$primary: #1249d7;
+$secondary: #ed40c4;
+$gray: #888888;
+$line-height: 2em;
+$padding: 1rem;
+
+$alt-font: Helvetica, Arial, sans-serif;
+
+:root {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --gray: #{$gray};
+  --page-color: #fff;
+  --footer-color: #000;
+  --footer-text: #ccc;
+  --text-color: #222;
+  --heading-color: #000;
+  --header-1: #313941;
+  --header-2: #131c23;
+  --font-size: 1rem;
+  --font-size-sm: 0.8rem;
+  --font-size-lg: 1.25rem;
+  --font-size-code: 14px;
+  @media (prefers-color-scheme: dark) {
+    --page-color: #1c252c;
+    --text-color: #ccc;
+    --heading-color: #fff;
+  }
+}
+
+body,
+html {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-variation-settings: "wdth" 100;
+  font-size: 20px;
+  line-height: $line-height;
+  color: #444;
+  margin: 0;
+  padding: 0;
+  color: var(--footer-text);
+  background-color: var(--footer-color);
+}
+
+.page-wrapper {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  color: var(--text-color);
+  background-color: var(--page-color);
+}
+
+// Demo boxes styles
+.box,
+.box-first,
+.box-large,
+.box-nested,
+.box-row {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 2.25rem;
+  margin-bottom: 0;
+  background: transparentize($primary, 0.8);
+  border: 1px solid #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  text-align: center;
+  color: $primary;
+  border-radius: 2px;
+  border: 1px solid lighten($primary, 32%);
+}
+
+.box-large {
+  height: 8rem;
+}
+
+.box,
+.box-first,
+.box-large,
+.box-nested,
+.box-row {
+  padding: 1rem;
+}
+
+.box-row {
+  margin-bottom: 1em;
+}
+
+// Buttons
+.button {
+  border-radius: 1.5em;
+  padding: 1em 1.75em;
+  text-decoration: none;
+  border-width: 0;
+  -webkit-font-smoothing: antialiased;
+  background-color: #000;
+  color: #fff;
+  &:hover {
+    background-color: $secondary;
+    color: #fff;
+  }
+}
+
+// Code
+pre.code-block {
+  padding: 1.25em;
+  border: 1px solid #ccc;
+  border-left-width: 5px;
+  margin: 1.6em 0;
+  overflow-x: auto;
+  background: #fff;
+  font-family: Monaco, Consolas, monospace;
+  font-size: var(--font-size-code);
+  line-height: 1.5;
+  white-space: pre;
+  word-wrap: normal;
+  @media (prefers-color-scheme: dark) {
+    background-color: #202930;
+    color: #ddd;
+    border-color: #000;
+  }
+}
+code.install {
+  display: inline-block;
+  background-color: rgba(19, 28, 35, 0.698);
+  color: #fff;
+  padding: 0.75em 1.25em;
+}
+
+// Typography
+.main-title,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $alt-font;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+}
+.main-title {
+  font-size: 2.75rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+p {
+  margin-bottom: 1rem;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+  color: var(--heading-color);
+  margin: 0 0 30px;
+}
+h3 {
+  font-size: 1.25rem;
+  color: var(--heading-color);
+  margin: 40px 0 15px;
+}
+h4,
+h5 {
+  font-size: 1rem;
+  color: var(--heading-color);
+  margin: 35px 0 15px;
+}
+
+ul {
+  list-style: initial;
+  margin-left: 1rem;
+}
+a {
+  color: var(--secondary);
+  &:hover {
+    color: var(--primary);
+  }
+}
+pre {
+  margin: 30px 0 50px;
+}
+
+// Layout elements
+header.page-header {
+  background: var(--header-2) linear-gradient(var(--header-1), var(--header-2));
+  color: #fff;
+  padding: 50px $padding 100px $padding;
+  p {
+    margin: 30px 0;
+  }
+}
+
+.action {
+  margin: 50px 0 30px 0;
+  .button {
+    margin: 0 10px;
+  }
+}
+
+footer {
+  background-color: #000;
+  text-align: center;
+  padding: 50px $padding 50px $padding;
+  p {
+    color: #ccc;
+    margin: 1rem 0;
+  }
+}
+
+.margin-bottom-big {
+  margin-bottom: 60px;
+}
