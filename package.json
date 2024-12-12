@@ -5,7 +5,8 @@
   "style": "dist/flexboxgrid.css",
   "main": "dist/flexboxgrid.css",
   "files": [
-    "dist"
+    "dist",
+    "flexboxgrid.scss"
   ],
   "scripts": {
     "build:css": "sass flexboxgrid.scss dist/flexboxgrid.css",
