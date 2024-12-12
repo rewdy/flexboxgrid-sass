@@ -11,7 +11,7 @@ Grid based on the flexbox model.
 
 By trying the [Flexbox Grid](http://flexboxgrid.com/) we saw the internal need to a SASS version of it. Thanks to the good work of Kristopher Joseph, we forked his project and sassified it.
 
-**This version** is a fork of the [hugeinc/flexboxgrid-sass](https://github.com/hugeinc/flexboxgrid-sass) project. It has been updated here to use the correct SCSS syntax for division and the now unnecessary browser prefixing has been removed. If you still need browser prefixes for your project, you can still use this library and just run your compiled CSS through PostCSS/autoprefixer to handle it in your build.
+**This version** is a fork of the [hugeinc/flexboxgrid-sass](https://github.com/hugeinc/flexboxgrid-sass) project. It has been updated here ~~to use the correct SCSS syntax for division~~ fully comply with the Dart SASS 3.x api and the now unnecessary browser prefixing has been removed. If you still need browser prefixes for your project, you can still use this library and just run your compiled CSS through PostCSS/autoprefixer to handle it in your build.
 
 ## Install
 

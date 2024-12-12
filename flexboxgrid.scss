@@ -3,6 +3,7 @@
 //
 
 @use "sass:math";
+@use "sass:list";
 
 // Set the number of columns you want to use on your layout.
 $flexboxgrid-grid-columns: 12 !default;
@@ -143,9 +144,9 @@ $name: xs;
 }
 
 @each $breakpoint in $flexboxgrid-breakpoints {
-  $name: nth($breakpoint, 1);
-  $size: nth($breakpoint, 2);
-  $container: nth($breakpoint, 3);
+  $name: list.nth($breakpoint, 1);
+  $size: list.nth($breakpoint, 2);
+  $container: list.nth($breakpoint, 3);
   @media only screen and (min-width: $size) {
     .container {
       width: $container;

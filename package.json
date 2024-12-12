@@ -15,13 +15,12 @@
     "docs:css": "sass --no-source-map ./docs/sass/demo.scss ./docs/demo.css && postcss ./docs/demo.css --use cssnano -o ./docs/demo.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
   "devDependencies": {
-    "cssnano": "^6.1.0",
-    "postcss": "^8.4.35",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
-    "prettier": "^3.2.5",
-    "sass": "^1.72.0"
+    "prettier": "^3.4.2",
+    "sass": "^1.82.0"
   },
   "repository": {
     "type": "git",
